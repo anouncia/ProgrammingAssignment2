@@ -32,3 +32,26 @@ cacheSolve <- function(mat, ...) {
     inv
 
 }
+
+Sample Execution:
+source("assign2.R")
+> mat = rbind(c(1, 2), c(3, 4)
++ )
+> m = makeCacheMatrix(mat)
+>
+> mat$get()
+Error in mat$get : $ operator is invalid for atomic vectors
+> m$get()
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+> cacheSolve(m)
+     [,1] [,2]
+[1,] -2.0  1.0
+[2,]  1.5 -0.5
+> cacheSolve(m)
+getting cached data.
+     [,1] [,2]
+[1,] -2.0  1.0
+[2,]  1.5 -0.5
+
